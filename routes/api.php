@@ -17,3 +17,16 @@ Route::group(
     Route::put('/{user}','UserController@update')->name('update');
 }
 );
+
+Route::group(
+    [
+        'namespace'=>'\\App\\Http\\Controllers\\API\V1\\',
+        'prefix'=>'1/projects',
+        'as'=>'api.v1.projects.'
+    ],function (){
+    Route::get('/','ProjectController@index')->name('index');
+    Route::get('/{project}','ProjectController@show')->name('show');
+    Route::post('/','ProjectController@store')->name('store');
+    Route::put('/{project}','ProjectController@update')->name('update');
+}
+);
