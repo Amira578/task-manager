@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserNewRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -14,7 +15,7 @@ class UserController extends Controller
     public function show( User $user){
         return $user;
     }
-    public function store( Request $request){
+    public function store( UserNewRequest $request){
        $user= User::create($request->all());
         return $user;
     }
