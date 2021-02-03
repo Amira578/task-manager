@@ -22,5 +22,9 @@ class UserController extends Controller
         $user->update($request->all());
         return  $user;
     }
+    public function destroy(User $user){
+        $user->delete();
+        return 'User Deleted';
+    }
 }
 

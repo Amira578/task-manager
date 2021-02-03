@@ -20,6 +20,7 @@ Route::group(
             Route::get('/{user}','UserController@show')->name('show');
             Route::post('/','UserController@store')->name('store');
             Route::put('/{user}','UserController@update')->name('update');
+            Route::delete('/{user}','UserController@destroy')->name('destroy');
 
         });
 
