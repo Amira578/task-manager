@@ -7,7 +7,6 @@ use App\Http\Requests\ProjectNewRequest;
 use App\Http\Requests\ProjectUpdateRequest;
 use App\Http\Resources\ProjectListResource;
 use App\Http\Resources\ProjectShowResource;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
@@ -15,11 +14,11 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return ProjectListResource::collection( Project::all());
+        return  ProjectListResource::collection( Project::all());
     }
     public function show( Project $project)
     {
-        return (new ProjectShowResource($project));
+        return ( new ProjectShowResource($project));
     }
     public function store( ProjectNewRequest $request)
     {
@@ -30,11 +29,5 @@ class ProjectController extends Controller
     {
         $project->update($request->all());
         return  $project;
-    }
-
-    public function  destroy(Project $project)
-    {
-        $project->delete();
-          return "project deleted";
     }
 }
