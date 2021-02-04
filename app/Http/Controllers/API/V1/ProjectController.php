@@ -7,6 +7,7 @@ use App\Http\Requests\ProjectNewRequest;
 use App\Http\Requests\ProjectUpdateRequest;
 use App\Http\Resources\ProjectListResource;
 use App\Http\Resources\ProjectShowResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
@@ -29,5 +30,11 @@ class ProjectController extends Controller
     {
         $project->update($request->all());
         return  $project;
+    }
+
+    public function  destroy(Project $project)
+    {
+        $project->delete();
+          return "project deleted";
     }
 }
