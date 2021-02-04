@@ -32,6 +32,7 @@ Route::group(
             Route::get('/{project}','ProjectController@show')->name('show');
             Route::post('/','ProjectController@store')->name('store');
             Route::put('/{project}','ProjectController@update')->name('update');
+            Route::delete('/{project}','ProjectController@destroy')->name('destroy');
 
         });
     Route::group([
