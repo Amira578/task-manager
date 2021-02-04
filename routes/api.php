@@ -43,6 +43,7 @@ Route::group(
         Route::get('/{task}','TaskController@show')->name('show');
         Route::post('/','TaskController@store')->name('store');
         Route::put('/{task}','TaskController@update')->name('update');
+        Route::delete('/{task}','TaskController@destroy')->name('destroy');
 
     });
     Route::group([
@@ -50,9 +51,10 @@ Route::group(
         'as'=>'tags.'
     ],function (){
         Route::get('/','TagController@index')->name('index');
-        Route::get('/{task}','TagController@show')->name('show');
+        Route::get('/{tag}','TagController@show')->name('show');
         Route::post('/','TagController@store')->name('store');
-        Route::put('/{task}','TagController@update')->name('update');
+        Route::put('/{tag}','TagController@update')->name('update');
+        Route::delete('/{tag}','TagController@destroy')->name('destroy');
 
     });
 

@@ -20,7 +20,7 @@ class ProjectController extends Controller
     {
         return ( new ProjectShowResource($project));
     }
-    public function store( ProjectNewRequest $request)
+    public function store( ProjectNewRequestph $request)
     {
         $project= Project::create($request->all());
         return $project;
