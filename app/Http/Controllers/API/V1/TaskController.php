@@ -8,17 +8,21 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return Task::all();
     }
-    public function show( Task $task){
+    public function show( Task $task)
+    {
         return $task;
     }
-    public function store( Request $request){
+    public function store( Request $request)
+    {
         $task= Task::create($request->all());
         return $task;
     }
-    public function update( Request $request, Task $task){
+    public function update( Request $request, Task $task)
+    {
         $task->update($request->all());
         return  $task;
     }

@@ -43,7 +43,7 @@ class Handler extends ExceptionHandler
 
         if($e instanceof ValidationException && $request->isJson() )
         {
-            return response()->json($e->errors()) ;
+            return response()->json($e->errors(),422) ;
         }
         return parent::render($request, $e);
     }

@@ -48,9 +48,16 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($password);
     }
 
-    public function getPhoneAttribute(){
+    /**
+     * this function handles the null value of phone attribute
+     *
+     * @return mixed|string
+     */
+    public function getPhoneAttribute()
+    {
 
       return  $this->attributes['phone']??'';
+
     }
     public function  getCreatedFromAttribute()
     {
