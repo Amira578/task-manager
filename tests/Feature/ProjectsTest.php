@@ -84,7 +84,9 @@ class ProjectsTest extends TestCase
     }
 
     /**
+     *
      * @test
+     * @return void
      */
     public function update_project_data()
     {
